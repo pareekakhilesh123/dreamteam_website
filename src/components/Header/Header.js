@@ -20,7 +20,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full">
+    <header className="w-full sticky top-0 z-50 ">
       {/* Top Contact Bar */}
       {/* <div className="hidden sm:flex justify-between items-center bg-gray-900 text-white px-4 py-1 text-xs">
         <div className="flex space-x-4">

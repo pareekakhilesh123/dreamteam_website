@@ -8,7 +8,7 @@ const Preloader = () => {
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    const totalDuration = 2000; // 2 seconds
+    const totalDuration = 2000;  
     const intervalTime = totalDuration / text.length; // 200ms
 
     const interval = setInterval(() => {
@@ -39,12 +39,12 @@ const Preloader = () => {
             {text.split("").map((char, index) => (
               <motion.span
                 key={index}
-                initial={{ opacity: 0, filter: "blur(5px)", scale: 1.3 }}
+                initial={{ opacity: 0, filter: "blur(0px)", scale: 1.3 }}
                 animate={
                   index < visibleChars
                     ? {
                         opacity: 1,
-                        filter: "blur(1px)",
+                        filter: "blur(0px)",
                         scale: [1.4, 1],
                       }
                     : {}

@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../../components/Header/Header'
 import HeroSection from '../../components/HeroSection/HeroSection'
-import PartnersSection from '../../components/PartnersSection/PartnersSection'
+// import PartnersSection from '../../components/PartnersSection/PartnersSection'
 import OurServices from '../../components/OurServices/OurServices'
 import StatsSection from '../../components/StatsSection/StatsSection'
 import AboutMe from '../../components/AboutMe/AboutMe'
@@ -13,7 +13,7 @@ function Home() {
     <div>
         <Header />
         <HeroSection />
-        <PartnersSection />
+        {/* <PartnersSection /> */}
         <OurServices />
         <StatsSection />
         <AboutMe />
