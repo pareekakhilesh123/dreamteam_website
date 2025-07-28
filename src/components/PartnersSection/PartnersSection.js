@@ -8,10 +8,21 @@ const PartnersSection = () => {
         Technical Partners & Recognised by
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-8 px-4">
-        <img src={Hero1} alt="" className="h-20 object-contain" />
-        <img src={Hero2} alt="" className="h-20 object-contain" />
-        <img src={Hero3} alt="" className="h-20 object-contain" />
-        {/* <img src={yourstoryLogo} alt="YourStory" className="h-10 object-contain" /> */}
+        <img
+          src={Hero1}
+          alt=""
+          className="h-40 object-contain border border-gray-400 rounded p-2"
+        />
+        <img
+          src={Hero2}
+          alt=""
+          className="h-40 object-contain border border-gray-400 rounded p-2"
+        />
+        <img
+          src={Hero3}
+          alt=""
+          className="h-40 object-contain border border-gray-400 rounded p-2"
+        />
       </div>
     </section>
   );

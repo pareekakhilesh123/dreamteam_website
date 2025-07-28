@@ -7,7 +7,7 @@ module.exports = {
         accent: '#00aaff',      // Sky Blue
         background: '#f4f6f8',  // Light Gray
         darkText: '#333333',    // For main text
-        success: '#34a853',     // For status
+        success: '#34a853',    // For status
       }
     },
   },
