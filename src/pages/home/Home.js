@@ -6,7 +6,7 @@ import OurServices from '../../components/OurServices/OurServices'
 import StatsSection from '../../components/StatsSection/StatsSection'
 import AboutMe from '../../components/AboutMe/AboutMe'
 import Testimonials from '../../components/Testimonials/Testimonials'
-// import CircularOrbit from '../../components/CircularOrbit/CircularOrbit'
+import CircularOrbit from '../../components/CircularOrbit/CircularOrbit'
 
 function Home() {
   return (
@@ -18,7 +18,7 @@ function Home() {
         <StatsSection />
         <AboutMe />
         <Testimonials />
-        {/* <CircularOrbit /> */}
+        <CircularOrbit />
       
     </div>
   )

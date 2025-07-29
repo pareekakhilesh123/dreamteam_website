@@ -8,14 +8,14 @@ const Preloader = () => {
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    const totalDuration = 2000;  
-    const intervalTime = totalDuration / text.length; // 200ms
+    const totalDuration = 2000;
+    const intervalTime = totalDuration / text.length;
 
     const interval = setInterval(() => {
       setVisibleChars((prev) => {
         if (prev < text.length) return prev + 1;
         clearInterval(interval);
-        setTimeout(() => setIsDone(true), 500); // small pause after animation
+        setTimeout(() => setIsDone(true), 500);
         return prev;
       });
     }, intervalTime);
@@ -33,8 +33,8 @@ const Preloader = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <h1
-            className="text-black text-center tracking-widest"
-            style={{ fontFamily: "Anton", fontSize: "100px" }}
+            className="text-black text-center tracking-widest font-[Anton]
+                       text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
           >
             {text.split("").map((char, index) => (
               <motion.span
@@ -51,7 +51,7 @@ const Preloader = () => {
                 }
                 transition={{
                   duration: 0.3,
-                  delay: index * 0.01, // much faster delay between characters
+                  delay: index * 0.01,
                   ease: "easeOut",
                 }}
               >

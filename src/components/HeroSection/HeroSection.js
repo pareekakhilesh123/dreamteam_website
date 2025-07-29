@@ -15,9 +15,9 @@ const HeroSection = () => {
       <div className="text-center z-10">
         <h1
           style={{ fontFamily: 'Anton' }}
-          className="text-6xl md:text-8xl text-black tracking-widest"
+          className="text-6xl md:text-8xl text-black"
         >
-      DREAMTEAM
+          Literom ERP
 
         </h1>
         <p className="text-gray-500 text-lg mt-2">Intelligent Solutions for Education 

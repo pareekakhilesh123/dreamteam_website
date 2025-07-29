@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  FaBars, FaTimes,
-  // FaPhone, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaMapMarker
+  FaBars, FaTimes, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube
 } from 'react-icons/fa';
-// import { BsTwitterX } from 'react-icons/bs';
+import { logo } from '../assest';
+import { BsTwitterX } from 'react-icons/bs'; 
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,53 +20,74 @@ const Header = () => {
     { path: '/contact', label: 'Contact' },
   ];
 
+ 
+
+ 
+  
+
   return (
-    <header className="w-full sticky top-0 z-50 ">
-      {/* Top Contact Bar */}
-      {/* <div className="hidden sm:flex justify-between items-center bg-gray-900 text-white px-4 py-1 text-xs">
-        <div className="flex space-x-4">
-          <span className="flex items-center gap-1"><FaPhone /> +91-1234567890</span>
-          <span className="flex items-center gap-1"><FaEnvelope /> info@example.com</span>
-          <span className="flex items-center gap-1"><FaMapMarker /> Jaipur, India</span>
+    <header className="w-full sticky top-0 z-50   px-6 py-3  ">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        
+        {/* Logo */}
+           <div
+      className="flex-shrink-0 md:bg-black bg-black text-white shadow-md px-6 py-2 rounded-full  ">
+          <img src={logo} alt="Logo" className="h-6" />
         </div>
-        <div className="flex space-x-3">
-          <FaFacebookF className="cursor-pointer" />
-          <FaInstagram className="cursor-pointer" />
-          <FaLinkedinIn className="cursor-pointer" />
-          <FaYoutube className="cursor-pointer" />
-          <BsTwitterX className="cursor-pointer" />
-        </div>
-      </div> */}
 
-      {/* Main Navigation */}
-      <div className="bg-black text-white shadow-md px-6 py-3 rounded-full w-fit mx-auto mt-2 flex items-center space-x-8">
-        {/* <div className="text-lg font-bold">DREAMTEAM</div> */}
-
-        {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider">
+        {/* Navigation - Desktop */}
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider  md:bg-black sm:bg-white text-white shadow-md px-6 py-3 rounded-full">
           {navLinks.map((link) => (
             <div key={link.path} className="relative">
-              <Link to={link.path} className="text-white hover:text-yellow-400 transition">
+              <Link
+                to={link.path}
+                className={`hover:text-yellow-400 transition ${
+                  location.pathname === link.path ? 'text-yellow-400' : ''
+                }`}
+              >
                 {link.label}
               </Link>
               {location.pathname === link.path && (
-                <span className="absolute -bottom-1 left-1 w-8 h-1 bg-yellow-400 rounded-full rotate-[6deg]"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-yellow-400 rounded-full" />
               )}
             </div>
           ))}
         </nav>
 
+        {/* Social Icons */}
+        <div className="hidden md:flex items-center space-x-4  md:bg-black sm:bg-white text-white shadow-md px-6 py-3 rounded-full">
+        {/* Social Icons - Desktop */}
+
+  <a href="https://www.facebook.com/dreamteamindia" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF className="cursor-pointer hover:text-yellow-400" />
+  </a>
+  <a href="https://www.instagram.com/dreamteam_technologies" target="_blank" rel="noopener noreferrer">
+    <FaInstagram className="cursor-pointer hover:text-yellow-400" />
+  </a>
+  <a href="https://www.linkedin.com/company/dreamteam-technologies/" target="_blank" rel="noopener noreferrer">
+    <FaLinkedinIn className="cursor-pointer hover:text-yellow-400" />
+  </a>
+  <a href="https://www.youtube.com/channel/UCtCvXZQvNEpXvCc6yFEh-CQ" target="_blank" rel="noopener noreferrer">
+    <FaYoutube className="cursor-pointer hover:text-yellow-400" />
+  </a>
+  <a href="https://x.com/DreamteamTechn1" target="_blank" rel="noopener noreferrer">
+    <BsTwitterX className="cursor-pointer hover:text-yellow-400" />
+  </a>
+
+
+        </div>
+
         {/* Mobile Menu Icon */}
         <div className="md:hidden">
           <button onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+            {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-black text-white px-6 pt-4 pb-2 rounded-xl mt-1 mx-auto max-w-[90%]">
+        <div className="md:hidden mt-2 bg-black text-white rounded-lg px-6 py-4 shadow-lg space-y-2">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -78,6 +100,26 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          {/* Mobile Social Icons */}
+        
+<div className="flex justify-center space-x-4 mt-4">
+  <a href="https://www.facebook.com/dreamteamindia" target="_blank" rel="noopener noreferrer">
+    <FaFacebookF className="cursor-pointer hover:text-yellow-400" />
+  </a>
+  <a href="https://www.instagram.com/dreamteam_technologies" target="_blank" rel="noopener noreferrer">
+    <FaInstagram className="cursor-pointer hover:text-yellow-400" />
+  </a>
+  <a href="https://www.linkedin.com/company/dreamteam-technologies/" target="_blank" rel="noopener noreferrer">
+    <FaLinkedinIn className="cursor-pointer hover:text-yellow-400" />
+  </a>
+  <a href="https://www.youtube.com/channel/UCtCvXZQvNEpXvCc6yFEh-CQ" target="_blank" rel="noopener noreferrer">
+    <FaYoutube className="cursor-pointer hover:text-yellow-400" />
+  </a>
+   <a href="https://x.com/DreamteamTechn1" target="_blank" rel="noopener noreferrer">
+    <BsTwitterX className="cursor-pointer hover:text-yellow-400" />
+  </a>
+</div>
+
         </div>
       )}
     </header>
