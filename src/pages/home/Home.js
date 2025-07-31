@@ -8,17 +8,22 @@ import AboutMe from '../../components/AboutMe/AboutMe'
 import Testimonials from '../../components/Testimonials/Testimonials'
 import CircularOrbit from '../../components/CircularOrbit/CircularOrbit'
 
+
+
+
 function Home() {
   return (
     <div>
-        <Header />
+    <Header className="" />
         <HeroSection />
         {/* <PartnersSection /> */}
+        
         <OurServices />
         <StatsSection />
         <AboutMe />
         <Testimonials />
         <CircularOrbit />
+   
       
     </div>
   )

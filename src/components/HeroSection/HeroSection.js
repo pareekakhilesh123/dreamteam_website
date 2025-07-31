@@ -1,59 +1,122 @@
 import React from 'react';
-import { Collage, logo1, School, University } from '../assest';
+import { Collage, Pencil, School, University } from '../assest';
 import IconCircleCard from '../IconCircleCard/IconCircleCard';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useAnimationFrame } from 'framer-motion';
+import PlexusBackground from '../../components/PlexusBackground/PlexusBackground';
+
 
 const HeroSection = () => {
+  const radius = 165;
+
+  // Motion values for each icon
+  const x1 = useMotionValue(0);
+  const y1 = useMotionValue(0);
+
+  const x2 = useMotionValue(0);
+  const y2 = useMotionValue(0);
+
+  const x3 = useMotionValue(0);
+  const y3 = useMotionValue(0);
+
+  useAnimationFrame((t) => {
+    const baseAngle = (t / 9000) * Math.PI;
+
+    // 0° for School
+    x1.set(radius * Math.cos(baseAngle));
+    y1.set(radius * Math.sin(baseAngle));
+
+    // 120° offset for College
+    x2.set(radius * Math.cos(baseAngle + (2 * Math.PI) / 3));
+    y2.set(radius * Math.sin(baseAngle + (2 * Math.PI) / 3));
+
+    // 240° offset for University
+    x3.set(radius * Math.cos(baseAngle + (4 * Math.PI) / 3));
+    y3.set(radius * Math.sin(baseAngle + (4 * Math.PI) / 3));
+  });
+
   return (
-    <section className="relative h-screen flex items-center justify-center bg-white px-4">
-   
-      <div className=" left-1/2 transform -translate-x-1/2">
-        <img src={logo1} alt="Logo" className="w-28 md:w-full rounded-xl border-2 border-white" />
-      </div>
+  <section className="relative h-screen md:h-screen flex items-center justify-center px-4 py-10 md:py-0">
 
-     
-      <div className="text-center z-10">
-        <h1
-          style={{ fontFamily: 'Anton' }}
-          className="text-6xl md:text-8xl text-black"
-        >
-          Literom ERP
+  {/* Background Layer */}
+  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-800 to-slate-950 opacity-80 h-screen">
+    <PlexusBackground />
+  </div>
 
-        </h1>
-        <p className="text-gray-500 text-lg mt-2">Intelligent Solutions for Education 
-        <span className='flex'> We Focus On Creating Value for Educational Organizations</span>
-</p>
-      </div>
-
-
+  {/* HeroSection Content Wrapper */}
+  <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto gap-8 z-10">
+    
+    {/* Left Side */}
+    <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+      <div className="relative w-[200px] mb-4">
       
-     <motion.div
-        className="absolute bottom-14 left-10 md:left-[765px] flex-col
-"
-        animate={{ y: [0, -20, 0] }}
-        transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-      >
-        <IconCircleCard icon={Collage} label="College" bgColor="bg-green-700" />
-      </motion.div>
+        <img src={Pencil} alt="Pencil Banner" className="w-full" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-sm font-bold text-red-400" style={{ fontFamily: 'Alice' }}>
+            LITEROM ERP
+          </span>
+        </div>
+      </div>
 
-      {/* University Icon Animation */}
-      <motion.div
-        className="absolute bottom-14 right-10 md:right-[100px] md:top-[278px]"
-        animate={{ x: [0, 20, 0] }}
-        transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
-      >
-        <IconCircleCard icon={University} label="University" bgColor="bg-orange-700" />
-      </motion.div>
+      <h1 className="mt-2 text-4xl md:text-5xl font-serif font-semibold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400" style={{ fontFamily: 'Alice' }}>
+        Intelligent <span className="text-white font-bold text-focus-in">Solutions</span>
+        <br /> for Education
+      </h1>
 
-      {/* School Icon Animation */}
-      <motion.div
-        className="absolute top-10 md:top-24 right-1/4 md:left-[499px]"
-        animate={{ y: [0, 25, 0] }}
-        transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
-      >
-        <IconCircleCard icon={School} label="School" bgColor="bg-amber-700" />
-      </motion.div>
-    </section>
+      <p className="mt-2 text-sm md:text-base text-gray-300 max-w-md" style={{ fontFamily: 'Alice' }}>
+        We Focus On Creating Value for Educational Organizations
+      </p>
+
+      <button className="mt-6 px-5 py-2 bg-blue-600 text-white text-xs font-bold rounded-full shadow-md hover:bg-blue-700 transition">
+        ENQUIRY NOW
+      </button>
+    </div>
+
+    {/* Right Side */}
+   
+<div className=" hidden md:flex flex-1 relative items-center justify-center">
+  {/* Orbiting Icons - Behind the Text */}
+  <div className="absolute inset-0 flex items-center justify-center z-0">
+    <motion.div style={{ x: x1, y: y1, left: '42%', top: '40%' }} className="absolute">
+      <IconCircleCard icon={School} label="School" bgColor="bg-amber-700" />
+    </motion.div>
+
+    <motion.div style={{ x: x2, y: y2, left: '42%', top: '40%' }} className="absolute">
+      <IconCircleCard icon={Collage} label="College" bgColor="bg-green-700" />
+    </motion.div>
+
+    <motion.div style={{ x: x3, y: y3, left: '42%', top: '40%' }} className="absolute">
+      <IconCircleCard icon={University} label="University" bgColor="bg-orange-700" />
+    </motion.div>
+  </div>
+
+  {/* Literom ERP Text - On Top */}
+  <h1
+    style={{ fontFamily: 'Anton' }}
+    className="relative z-10  text-4xl md:text-4xl text-white text-center"
+  >
+    Literom ERP
+  </h1>
+</div>
+
+
+{/* responsive for mobile  */}
+
+<div className="md:hidden flex flex-row - mt-24  gap-4 items-center justify-center">
+   
+    <IconCircleCard icon={School} label="School" bgColor="bg-amber-700"  />
+    <IconCircleCard icon={Collage} label="College" bgColor="bg-green-700" />
+    <IconCircleCard icon={University} label="University" bgColor="bg-orange-700" /> 
+  </div>
+
+
+  </div>
+
+
+  
+  
+  
+
+</section>
   );
 };
 

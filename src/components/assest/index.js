@@ -10,6 +10,7 @@ import Tesdtimonials from './Testimonials/lavender-singh.png';
 import Tesdtimonials2 from './Testimonials/richa.png';
 import Tesdtimonials3 from './Testimonials/surashree-rah.png';
 import Aboutme from './Aboutme/20943573.jpg';
+import Pencil from './HeroSection/pencil.png';
 
 
 
@@ -25,6 +26,7 @@ export{
         Collage,
         University,
         Hero3,
+        Pencil,
 //       tesdtimonials images 
         Tesdtimonials,
         Tesdtimonials2,

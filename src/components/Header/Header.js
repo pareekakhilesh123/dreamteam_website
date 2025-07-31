@@ -26,17 +26,17 @@ const Header = () => {
   
 
   return (
-    <header className="w-full sticky top-0 z-50   px-6 py-3  ">
+    <header className="w-full sticky top-0  z-50 px-6 py-3  ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Logo */}
            <div
-      className="flex-shrink-0 md:bg-black bg-black text-white shadow-md px-6 py-2 rounded-full  ">
+      className="flex-shrink-0 md:bg-white bg-white text-white shadow-md px-6 py-2 rounded-full  ">
           <img src={logo} alt="Logo" className="h-6" />
         </div>
 
         {/* Navigation - Desktop */}
-        <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider  md:bg-black sm:bg-white text-white shadow-md px-6 py-3 rounded-full">
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider  md:bg-white sm:bg-white text-black shadow-md px-6 py-3 rounded-full">
           {navLinks.map((link) => (
             <div key={link.path} className="relative">
               <Link
@@ -55,7 +55,7 @@ const Header = () => {
         </nav>
 
         {/* Social Icons */}
-        <div className="hidden md:flex items-center space-x-4  md:bg-black sm:bg-white text-white shadow-md px-6 py-3 rounded-full">
+        <div className="hidden md:flex items-center space-x-4  md:bg-white sm:bg-white text-black shadow-md px-6 py-3 rounded-full">
         {/* Social Icons - Desktop */}
 
   <a href="https://www.facebook.com/dreamteamindia" target="_blank" rel="noopener noreferrer">
@@ -78,11 +78,11 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Icon */}
-        <div className="md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-          </button>
-        </div>
+        <div className="md:hidden bg-white p-2 w-auto h-[40px] rounded-[10px] ">
+  <button onClick={() => setMenuOpen(!menuOpen)}>
+    {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+  </button>
+</div>
       </div>
 
       {/* Mobile Menu */}

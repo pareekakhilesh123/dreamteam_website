@@ -24,7 +24,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="bg-white py-10 px-4">
+    <section className=" py-10 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 text-center">
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center">

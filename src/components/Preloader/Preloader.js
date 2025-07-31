@@ -27,13 +27,13 @@ const Preloader = () => {
     <AnimatePresence>
       {!isDone && (
         <motion.div
-          className="fixed inset-0 bg-white flex items-center justify-center z-50"
+          className="fixed inset-0  bg-gradient-to-r from-slate-800 to-slate-950 opacity-80  flex items-center justify-center z-50"
           initial={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration: 0.1, ease: "easeIn" }}
         >
           <h1
-            className="text-black text-center tracking-widest font-[Anton]
+            className="text-white text-center tracking-widest font-[Anton]
                        text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
           >
             {text.split("").map((char, index) => (

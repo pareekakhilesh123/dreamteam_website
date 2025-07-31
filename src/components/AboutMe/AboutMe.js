@@ -5,7 +5,7 @@ import { Aboutme } from '../assest';
 
 const AboutMe = () => {
   return (
-    <section className="bg-white py-12 px-4 md:px-12 lg:px-24">
+    <section className=" py-12 px-4 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         
         {/* Left side*/}

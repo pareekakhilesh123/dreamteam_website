@@ -1,6 +1,7 @@
 // App.js
 import React, { useState, useEffect } from "react";
 import '@fontsource/anton';
+
 import './App.css';
 import AppRoutes from './routes/AppRoutes';
 import Preloader from './components/Preloader/Preloader';
