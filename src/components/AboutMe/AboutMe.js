@@ -10,14 +10,14 @@ const AboutMe = () => {
         
         {/* Left side*/}
         <div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-2">About Me</h2>
+          <h2 className="text-3xl font-bold text-white mb-2">About Me</h2>
           <p className="text-lg text-blue-600 font-medium mb-4">Hello, nice to meet you!</p>
 
-          <p className="text-xl font-semibold text-gray-700 mb-6">
+          <p className="text-xl font-semibold text-gray-300 mb-6">
             We help individuals to become their best Tech - Solutions.
           </p>
 
-          <div className="space-y-5 text-gray-700 leading-relaxed">
+          <div className="space-y-5 text-gray-400 leading-relaxed">
             <p>
               <strong>DREAMTEAM Technologies Pvt. Ltd.</strong>, a Jodhpur (India) based Company, provides Offshore
               Education Management Software to Schools, Colleges and Universities, Software Outsourcing, Website Design

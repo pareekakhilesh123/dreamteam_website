@@ -42,7 +42,7 @@ const services = [
 
 const OurServices = () => {
   return (
-    <section className="py-16 px-6  text-center">
+    <section className="py-16 px-6  text-center  bg-gradient-to-r from-love to-couple opacity-80">
       <h2 className="text-3xl font-bold mb-4 uppercase">Our Services</h2>
       <p className="text-gray-600 max-w-xl mx-auto mb-10">
         I can help you in these particular areas.
@@ -53,12 +53,12 @@ const OurServices = () => {
           <div key={index} className="perspective">
             <div className="relative w-full h-80 transition-transform duration-700 transform-style-preserve-3d hover:rotate-y-180">
               {/* Front Side */}
-              <div className="absolute w-full h-full backface-hidden bg-gray-100 rounded-lg shadow p-6 pt-16">
+              <div className="absolute w-full h-full backface-hidden bg-white/10 backdrop-blur-lg   rounded-lg shadow p-6 pt-16">
                 <div className={`absolute -top-8 left-1/2 transform -translate-x-1/2 rounded-full p-4 ${service.color}`}>
                   <div className="text-white">{service.icon}</div>
                 </div>
-                <h2 className="text-lg font-semibold mb-2 mt-6">{service.title}</h2>
-                <p className="text-sm text-gray-600 pt-4">{service.description}</p>
+                <h2 className="text-lg   font-semibold mb-2 mt-6">{service.title}</h2>
+                <p className="text-sm text-gray-300 pt-4">{service.description}</p>
               </div>
 
               {/* Back Side */}

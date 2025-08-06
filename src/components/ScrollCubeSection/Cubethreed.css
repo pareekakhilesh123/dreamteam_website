@@ -1,0 +1,21 @@
+.cube-wrapper {
+  perspective: 1000px;
+  position: sticky;
+  top: 20%;
+  z-index: 10;
+}
+
+.cube-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
